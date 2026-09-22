@@ -1,0 +1,24 @@
+{
+  "name": "ai-doc-assistant-qa",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Risk based Playwright test suite for an AI-powered document assistant: data isolation, AI grounding, API contract, reliability and critical E2E flow.",
+  "scripts": {
+    "mock": "node mock-server/server.js",
+    "test": "playwright test",
+    "test:smoke": "playwright test --grep @smoke",
+    "test:api": "playwright test --project=api",
+    "test:ai": "playwright test --project=ai-eval",
+    "test:reliability": "playwright test --project=reliability",
+    "test:e2e": "playwright test --project=e2e",
+    "test:bugs": "node scripts/prove-bugs.js",
+    "report": "playwright show-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.56.0"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT"
+}
